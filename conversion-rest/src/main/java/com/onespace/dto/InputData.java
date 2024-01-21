@@ -1,6 +1,5 @@
-package com.onespace.controller;
+package com.onespace.dto;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.*;
 
 @Getter

@@ -6,10 +6,7 @@ import com.onespace.enums.QueryEnum;
 import com.onespace.enums.RomanNumeralSymbol;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Service
 public class MessageServiceProcessor {
@@ -18,10 +15,10 @@ public class MessageServiceProcessor {
     public Map<Material, Double> mapMetalToNumericValue = new HashMap();
     private List<String> sentenceAnswers = new ArrayList();
 
-    public void process(String messages) {
+    public String process(String messages) {
 
         if (messages == null  || messages.isEmpty()) {
-            //TODO INVALID STRING
+            throw new NullPointerException("Input can't be null");
         }
 
         QueryProcessorFactory queryProcessorFactory;
@@ -54,6 +51,21 @@ public class MessageServiceProcessor {
 
         }
 
+        if(sentenceAnswers.size() > 0){
+            return buildOutPut();
+        }else{
+            return "No -Content";
+        }
+
+    }
+
+    private String buildOutPut() {
+        StringBuilder outPut = new StringBuilder();
+        for(int i = 0; i < sentenceAnswers.size();i++){
+            outPut.append(sentenceAnswers.get(i));
+            outPut.append("\n");
+        }
+        return outPut.toString();
     }
 
 

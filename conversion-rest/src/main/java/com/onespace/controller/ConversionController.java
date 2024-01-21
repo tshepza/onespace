@@ -2,6 +2,8 @@ package com.onespace.controller;
 
 
 import com.onespace.MessageServiceProcessor;
+import com.onespace.dto.InputData;
+import com.onespace.dto.Output;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -26,12 +28,18 @@ public class ConversionController {
     }
 
     @PostMapping(value= "/convert", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity convert(@RequestBody InputData inputData){
+    public ResponseEntity<Output> convert(@RequestBody InputData inputData){
 
 
-        serviceProcessor.process(inputData.getInput());
+        String response = null;
+        try {
+            response = serviceProcessor.process(inputData.getInput());
+        } catch (Exception e) {
+            return new ResponseEntity(new Output("Couldn't process the given input " + inputData.getInput() ),HttpStatus.BAD_REQUEST);
+        }
 
-        return null;
+
+        return new ResponseEntity(new Output(response),HttpStatus.OK);
     }
 
 }
