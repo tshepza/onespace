@@ -4,12 +4,14 @@ import com.onespace.enums.ErrorMessages;
 import com.onespace.enums.Material;
 import com.onespace.enums.QueryEnum;
 import com.onespace.enums.RomanNumeralSymbol;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@Service
 public class MessageServiceProcessor {
 
     private Map<String, RomanNumeralSymbol> intergalacticRomanMap = new HashMap();
@@ -18,10 +20,7 @@ public class MessageServiceProcessor {
 
     public void process(String messages) {
 
-       // boolean dd =messages.isEmpty();
-
-
-        if (messages == null ) {
+        if (messages == null  || messages.isEmpty()) {
             //TODO INVALID STRING
         }
 

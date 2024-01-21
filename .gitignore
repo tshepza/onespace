@@ -1,18 +1,3 @@
-# Compiled Java class files
 *.class
-
-# Compiled Python bytecode
-*.py[cod]
-
-# Log files
-*.log
-
-# Package files
-*.jar
-
-# Maven
-target/
-dist/
-
-# JetBrains IDE
-.idea/
+.idea
+/target

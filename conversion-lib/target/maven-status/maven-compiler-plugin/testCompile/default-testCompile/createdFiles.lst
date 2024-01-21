@@ -1,6 +1,0 @@
-com\onespace\conversion\MessageServiceProcessorTest.class
-com\onespace\conversion\data\TestInput.class
-com\onespace\conversion\ValidateRomanNumeralSymbolLimitedRepeatTest.class
-com\onespace\conversion\ValidateIllegalRepeatTest.class
-com\onespace\conversion\ValidateIllegalRomanSymbolTest.class
-com\onespace\conversion\RomanNumeralToNumericConverterTest.class
