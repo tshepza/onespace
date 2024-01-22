@@ -46,6 +46,7 @@ public class MessageServiceProcessor {
                     sentenceAnswers.add(response);
                 }
             } else {
+                System.out.println(ErrorMessages.WRONG_SENTENCE_INPUT);
                 sentenceAnswers.add(ErrorMessages.WRONG_SENTENCE_INPUT);
             }
 
