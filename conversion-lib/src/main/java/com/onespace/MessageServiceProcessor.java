@@ -4,10 +4,12 @@ import com.onespace.enums.ErrorMessages;
 import com.onespace.enums.Material;
 import com.onespace.enums.QueryEnum;
 import com.onespace.enums.RomanNumeralSymbol;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
 
+@Slf4j
 @Service
 public class MessageServiceProcessor {
 
@@ -46,7 +48,7 @@ public class MessageServiceProcessor {
                     sentenceAnswers.add(response);
                 }
             } else {
-                System.out.println(ErrorMessages.WRONG_SENTENCE_INPUT);
+                log.info(ErrorMessages.WRONG_SENTENCE_INPUT);
                 sentenceAnswers.add(ErrorMessages.WRONG_SENTENCE_INPUT);
             }
 

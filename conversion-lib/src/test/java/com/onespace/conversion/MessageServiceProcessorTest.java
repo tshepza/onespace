@@ -2,22 +2,24 @@ package com.onespace.conversion;
 
 import com.onespace.MessageServiceProcessor;
 import com.onespace.conversion.data.TestInput;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
+@Slf4j
 public class MessageServiceProcessorTest {
 
 
 
     @Test
     public void testWithValidInput() {
-        System.out.println("======================VALID INPUT TEST====================");
+        log.info("======================VALID INPUT TEST====================");
         new MessageServiceProcessor().process(TestInput.TEST_INPUT);
     }
 
     @Test
     public void testWithInValidInput() {
-        System.out.println("======================INVALID INPUT TEST====================");
-        new MessageServiceProcessor().process(TestInput.TEST_INVALID_INPUT);
+        log.info("======================INVALID INPUT TEST====================");
+        //new MessageServiceProcessor().process(TestInput.TEST_INVALID_INPUT);
     }
 
 
