@@ -34,6 +34,11 @@ public class ConversionController {
         String response = null;
         try {
             response = serviceProcessor.process(inputData.getInput());
+
+            if(response == null){
+                return new ResponseEntity(new Output("Invalid Input"),HttpStatus.NO_CONTENT);
+            }
+
         } catch (Exception e) {
             return new ResponseEntity(new Output("Couldn't process the given input " + inputData.getInput() ),HttpStatus.BAD_REQUEST);
         }

@@ -54,7 +54,7 @@ public class MessageServiceProcessor {
         if(sentenceAnswers.size() > 0){
             return buildOutPut();
         }else{
-            return "No -Content";
+            return null;
         }
 
     }
@@ -63,7 +63,7 @@ public class MessageServiceProcessor {
         StringBuilder outPut = new StringBuilder();
         for(int i = 0; i < sentenceAnswers.size();i++){
             outPut.append(sentenceAnswers.get(i));
-            outPut.append("\n");
+            outPut.append("\\n");
         }
         return outPut.toString();
     }
