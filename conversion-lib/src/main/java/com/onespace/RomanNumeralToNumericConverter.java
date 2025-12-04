@@ -19,6 +19,8 @@ public class RomanNumeralToNumericConverter {
 
         int startIndex = 0;
 
+        ///MM D XX II
+
         thousand = findThousandsAndHundredsFromInput(RomanNumeralSymbol.M.getSymbol(), input);
         hundreds = findThousandsAndHundredsFromInput(RomanNumeralSymbol.C.getSymbol(), input);
 
